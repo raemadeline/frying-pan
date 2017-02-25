@@ -7,22 +7,18 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/app.css">
   </head>
   <body>
-    <div class="container">
-      <h1>Zen Volt</h1>
-
-      <div class="emoji-group">
-        <img src="images/sad.png">
-        <img src="images/lightning.png">
-        <img src="images/happy.png">
+    <div class="visualization">
+      <div class="visualization-message"></div>
+      <div class="meditation-info">
+        <p class="time"></p>
+        <button class="toggle-meditation">Begin Meditation</button>
       </div>
-
-      <p>Stay calm or else</p>
-
-      <!-- <button id="test">Hey</button> -->
     </div>
+    <a class="about" href="about.html">About Zen Volt</a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="scripts/api-connect.js"></script>
   </body>

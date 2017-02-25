@@ -1,11 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo|Lato');
+
 body {
-  font-family: monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
 }
 
+/* Visualization Page */
+.visualization {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);;
+  transition: background 0.3s ease-in-out;
+  font-family: 'Lato', sans-serif;
+}
+
+.visualization * {
+  color: #555;
+}
+
+.meditating * {
+  color: white;
+}
+
+.toggle-meditation {
+  font-family: 'Baloo', sans-serif;
+  background-color: white;
+  color: #555;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+}
+
+.time {
+  font-family: 'Baloo', sans-serif;
+  font-size: 40px;
+}
+
+.meditation-info {
+  display: flex;
+  position: absolute;
+  top: 40px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+@keyframes fade-gradient {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.meditating.visualization {
+  background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+}
+
+.meditating:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  animation: fade-gradient 60s linear infinite;
+}
+
+.meditating:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+  animation: fade-gradient 60s linear infinite;
+  animation-delay: 30s;
+}
+
+.about {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+}
+
+.visualization-message {
+  font-size: 40px;
+  max-width: 400px;
+  z-index: 3;
+}
+
+.about:hover {
+  text-decoration: underline;
+}
+
+/* About page */
 .container {
-  flex: 1;
-  max-width: 700px;
+  margin: 0 auto;
+  font-family: monospace;
+  max-width: 600px;
 }
